@@ -1,0 +1,19 @@
+1. Zadanie na kilka "stanowisk" (problem przepływowy)
+n - ilość zadań
+m - ilość maszyn
+p(j,k) - czas wykonania zadania j na maszynie k
+pi - kolejność wykonywania zadań
+2. Wyznaczenie hamonogramu: 
+C(pi(j), k) = max(C(pi(j-1), k), C(pi(j), k-1)) + p(pi(j), k)
+C(0, k)=0
+C(j, 0)=0
+pi(0)=0
+C - tablica dwuwymiarowa
+
+for (j=1; j<=n; j++)
+{
+	for (k=1; k<=m; k++)
+	{
+		C(pi(j), k) = max(C(pi(j-1), k), C(pi(j), k-1)) + p(pi(j), k)
+	}
+}
